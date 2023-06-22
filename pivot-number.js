@@ -15,11 +15,10 @@
 // Return the leftmost pivot index. If no such index exists, return -1.
 
 var pivotIndex = function(nums) {
-    let totalSum = 0,
-   leftSum = 0;
-   totalSum = nums.reduce((a, b) => a + b, 0);
-
- for (let i = 0; i < nums.length; i++) {
+  let totalSum = 0,
+  leftSum = 0;
+  totalSum = nums.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+  for (let i = 0; i < nums.length; i++) {
    if (totalSum - leftSum - nums[i] === leftSum) {
      return i;
    }
